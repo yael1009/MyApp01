@@ -12,9 +12,34 @@ namespace MyApp01
 {
     public partial class Form1 : Form
     {
+
+        bool save = false;
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*DialogResult ds;
+            ds = ofpAbrir.ShowDialog();*/
+
+            if(ofpAbrir.ShowDialog() == DialogResult.OK)
+            {
+                rctTexto.LoadFile(ofpAbrir.FileName, RichTextBoxStreamType.PlainText);
+            }
+
+        }
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(save  == falso)
+            {
+                if (sfdGuardar.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
         }
     }
 }

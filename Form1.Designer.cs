@@ -28,13 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarComoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ofpAbrir = new System.Windows.Forms.OpenFileDialog();
+            this.sfdGuardar = new System.Windows.Forms.SaveFileDialog();
+            this.rctTexto = new System.Windows.Forms.RichTextBox();
+            this.mnuPrincipal.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // mnuPrincipal
+            // 
+            this.mnuPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mnuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem});
+            this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.mnuPrincipal.Name = "mnuPrincipal";
+            this.mnuPrincipal.Size = new System.Drawing.Size(800, 29);
+            this.mnuPrincipal.TabIndex = 0;
+            this.mnuPrincipal.Text = "menuStrip1";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoToolStripMenuItem,
+            this.abrirToolStripMenuItem,
+            this.guardarToolStripMenuItem,
+            this.guardarComoToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.salirToolStripMenuItem});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(77, 25);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // nuevoToolStripMenuItem
+            // 
+            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuevoToolStripMenuItem.Text = "Nuevo";
+            // 
+            // abrirToolStripMenuItem
+            // 
+            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.abrirToolStripMenuItem.Text = "Abrir";
+            this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
+            // 
+            // guardarToolStripMenuItem
+            // 
+            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.guardarToolStripMenuItem.Text = "Guardar";
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
+            // 
+            // guardarComoToolStripMenuItem
+            // 
+            this.guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
+            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.guardarComoToolStripMenuItem.Text = "Guardar como";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.salirToolStripMenuItem.Text = "Salir";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            // 
+            // ofpAbrir
+            // 
+            this.ofpAbrir.Filter = "Archivo de texto|*.txt";
+            // 
+            // rctTexto
+            // 
+            this.rctTexto.Location = new System.Drawing.Point(12, 32);
+            this.rctTexto.Name = "rctTexto";
+            this.rctTexto.Size = new System.Drawing.Size(788, 415);
+            this.rctTexto.TabIndex = 1;
+            this.rctTexto.Text = "";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rctTexto);
+            this.Controls.Add(this.mnuPrincipal);
+            this.MainMenuStrip = this.mnuPrincipal;
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.mnuPrincipal.ResumeLayout(false);
+            this.mnuPrincipal.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip mnuPrincipal;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guardarComoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog ofpAbrir;
+        private System.Windows.Forms.SaveFileDialog sfdGuardar;
+        private System.Windows.Forms.RichTextBox rctTexto;
     }
 }
 
