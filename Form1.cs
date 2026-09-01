@@ -45,6 +45,7 @@ namespace MyApp01
         {
             txtNumero1.Clear();
             txtNumero2.Clear();
+            txtResultado.Clear();
 
             txtNumero1.Focus();
         }
