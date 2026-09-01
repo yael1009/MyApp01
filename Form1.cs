@@ -33,7 +33,7 @@ namespace MyApp01
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(save  == falso)
+            if(save  == false)
             {
                 if (sfdGuardar.ShowDialog() == DialogResult.OK)
                 {
