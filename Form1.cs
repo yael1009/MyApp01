@@ -14,6 +14,8 @@ namespace MyApp01
     {
 
         bool save = false;
+        bool cambios = false;
+        String path;
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +28,10 @@ namespace MyApp01
 
             if(ofpAbrir.ShowDialog() == DialogResult.OK)
             {
+                path = ofpAbrir.FileName;
+                save = true;
                 rctTexto.LoadFile(ofpAbrir.FileName, RichTextBoxStreamType.PlainText);
+                guardarToolStripMenuItem.Enabled = true;
             }
 
         }
@@ -37,9 +42,42 @@ namespace MyApp01
             {
                 if (sfdGuardar.ShowDialog() == DialogResult.OK)
                 {
-
+                    path = sfdGuardar.FileName;
+                    save = true;
                 }
+                rctTexto.SaveFile(path,RichTextBoxStreamType.PlainText);
+                guardarToolStripMenuItem.Enabled=false;
             }
+        }
+
+        private void rctTexto_TextChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(sfdGuardar.ShowDialog() == DialogResult.OK)
+            {
+                path=sfdGuardar.FileName;
+                rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
+                guardarToolStripMenuItem.Enabled=true;
+                save = true;
+            }
+        }
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rctTexto.Clear();
+            rctTexto.Focus();
+            path = null;//""
+            save = false;
+            //guardarToolStripMenuItem.Enabled = true;//Se puede omitir por el text change
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
