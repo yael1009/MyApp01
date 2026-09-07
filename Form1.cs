@@ -14,6 +14,7 @@ namespace MyApp01
     {
         int contador;
         int minutos;
+        bool bandera=false;
 
         public Form1()
         {
@@ -24,7 +25,7 @@ namespace MyApp01
         {
             //lblReloj.Text = DateTime.Now.ToShortTimeString();
             //lblReloj.Text = DateTime.Now.ToLongTimeString();
-            int contador++;
+            contador++;
             DateTime tiempo  = DateTime.Now;
             lblReloj.Text = tiempo.ToString("HH:mm:ss");
             lblFecha.Text = tiempo.ToString("MM:dd:yyyy");
@@ -32,8 +33,24 @@ namespace MyApp01
                 minutos++;
                 contador = 0;
             }
-            lblEjecucion.Text = "Tiempo en ejecucion" + minutos.ToString()  + "minutos";
+            lblEjecucion.Text = "Tiempo en ejecucion " + minutos.ToString()  + " minutos";
 
+        }
+
+        private void btnEncender_Click(object sender, EventArgs e)
+        {
+            if (bandera == false)
+            {
+                bandera = true;
+                btnEncender.Text = "Apagar";
+                tmrReloj.Enabled = true;
+            }
+            else
+            {
+                bandera = false;
+                btnEncender.Text = "Encender";
+                tmrReloj.Enabled = false;
+            }
         }
     }
 }

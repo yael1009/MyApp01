@@ -33,11 +33,11 @@
             this.lblReloj = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblEjecucion = new System.Windows.Forms.Label();
+            this.btnEncender = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tmrReloj
             // 
-            this.tmrReloj.Enabled = true;
             this.tmrReloj.Interval = 1000;
             this.tmrReloj.Tick += new System.EventHandler(this.tmrReloj_Tick);
             // 
@@ -64,18 +64,29 @@
             // lblEjecucion
             // 
             this.lblEjecucion.AutoSize = true;
-            this.lblEjecucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEjecucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEjecucion.Location = new System.Drawing.Point(26, 214);
             this.lblEjecucion.Name = "lblEjecucion";
-            this.lblEjecucion.Size = new System.Drawing.Size(581, 69);
+            this.lblEjecucion.Size = new System.Drawing.Size(176, 22);
             this.lblEjecucion.TabIndex = 2;
             this.lblEjecucion.Text = "Tiempo en ejecucion";
+            // 
+            // btnEncender
+            // 
+            this.btnEncender.Location = new System.Drawing.Point(589, 103);
+            this.btnEncender.Name = "btnEncender";
+            this.btnEncender.Size = new System.Drawing.Size(75, 23);
+            this.btnEncender.TabIndex = 3;
+            this.btnEncender.Text = "Encender";
+            this.btnEncender.UseVisualStyleBackColor = true;
+            this.btnEncender.Click += new System.EventHandler(this.btnEncender_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 331);
+            this.ClientSize = new System.Drawing.Size(841, 263);
+            this.Controls.Add(this.btnEncender);
             this.Controls.Add(this.lblEjecucion);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblReloj);
@@ -92,6 +103,7 @@
         private System.Windows.Forms.Label lblReloj;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblEjecucion;
+        private System.Windows.Forms.Button btnEncender;
     }
 }
 
