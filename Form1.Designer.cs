@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +40,8 @@
             this.ofpAbrir = new System.Windows.Forms.OpenFileDialog();
             this.sfdGuardar = new System.Windows.Forms.SaveFileDialog();
             this.rctTexto = new System.Windows.Forms.RichTextBox();
+            this.tmrAutoguardado = new System.Windows.Forms.Timer(this.components);
+            this.lblAutoguardado = new System.Windows.Forms.Label();
             this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +52,7 @@
             this.archivoToolStripMenuItem});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
-            this.mnuPrincipal.Size = new System.Drawing.Size(800, 28);
+            this.mnuPrincipal.Size = new System.Drawing.Size(800, 30);
             this.mnuPrincipal.TabIndex = 0;
             this.mnuPrincipal.Text = "menuStrip1";
             // 
@@ -63,13 +66,13 @@
             this.toolStripSeparator1,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
@@ -90,7 +93,7 @@
             // guardarComoToolStripMenuItem
             // 
             this.guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
-            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
             this.guardarComoToolStripMenuItem.Text = "Guardar como";
             this.guardarComoToolStripMenuItem.Click += new System.EventHandler(this.guardarComoToolStripMenuItem_Click);
             // 
@@ -102,7 +105,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -116,18 +119,34 @@
             // 
             // rctTexto
             // 
-            this.rctTexto.Location = new System.Drawing.Point(12, 32);
+            this.rctTexto.Location = new System.Drawing.Point(0, 31);
             this.rctTexto.Name = "rctTexto";
-            this.rctTexto.Size = new System.Drawing.Size(788, 415);
+            this.rctTexto.Size = new System.Drawing.Size(800, 419);
             this.rctTexto.TabIndex = 1;
             this.rctTexto.Text = "";
             this.rctTexto.TextChanged += new System.EventHandler(this.rctTexto_TextChanged);
+            // 
+            // tmrAutoguardado
+            // 
+            this.tmrAutoguardado.Interval = 30000;
+            this.tmrAutoguardado.Tick += new System.EventHandler(this.tmrAutoguardado_Tick);
+            // 
+            // lblAutoguardado
+            // 
+            this.lblAutoguardado.AutoSize = true;
+            this.lblAutoguardado.Enabled = false;
+            this.lblAutoguardado.Location = new System.Drawing.Point(611, 14);
+            this.lblAutoguardado.Name = "lblAutoguardado";
+            this.lblAutoguardado.Size = new System.Drawing.Size(93, 16);
+            this.lblAutoguardado.TabIndex = 2;
+            this.lblAutoguardado.Text = "Se guardo cfcf";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblAutoguardado);
             this.Controls.Add(this.rctTexto);
             this.Controls.Add(this.mnuPrincipal);
             this.MainMenuStrip = this.mnuPrincipal;
@@ -153,6 +172,8 @@
         private System.Windows.Forms.OpenFileDialog ofpAbrir;
         private System.Windows.Forms.SaveFileDialog sfdGuardar;
         private System.Windows.Forms.RichTextBox rctTexto;
+        private System.Windows.Forms.Timer tmrAutoguardado;
+        private System.Windows.Forms.Label lblAutoguardado;
     }
 }
 
