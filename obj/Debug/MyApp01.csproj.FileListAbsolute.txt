@@ -9,3 +9,9 @@ C:\Users\rober\source\repos\MyApp01\MyApp01\obj\Debug\MyApp01.csproj.CoreCompile
 C:\Users\rober\source\repos\MyApp01\MyApp01\obj\Debug\MyApp01.exe
 C:\Users\rober\source\repos\MyApp01\MyApp01\obj\Debug\MyApp01.pdb
 C:\Users\rober\source\repos\MyApp01\MyApp01\obj\Debug\MyApp01.FormConfiguarar.resources
+C:\Users\rober\source\repos\MyApp01\MyApp01\obj\Debug\Interop.MediaPlayer.dll
+C:\Users\rober\source\repos\MyApp01\MyApp01\obj\Debug\Interop.WMPLib.dll
+C:\Users\rober\source\repos\MyApp01\MyApp01\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\rober\source\repos\MyApp01\MyApp01\obj\Debug\MyApp01.csproj.ResolveComReference.cache
+C:\Users\rober\source\repos\MyApp01\MyApp01\bin\Debug\Interop.WMPLib.dll
+C:\Users\rober\source\repos\MyApp01\MyApp01\bin\Debug\AxInterop.WMPLib.dll

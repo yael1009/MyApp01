@@ -29,14 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tmrReloj = new System.Windows.Forms.Timer(this.components);
             this.lblReloj = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configurarAlarmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wmp = new AxWMPLib.AxWindowsMediaPlayer();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wmp)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrReloj
@@ -79,26 +82,37 @@
             // configurarAlarmaToolStripMenuItem
             // 
             this.configurarAlarmaToolStripMenuItem.Name = "configurarAlarmaToolStripMenuItem";
-            this.configurarAlarmaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.configurarAlarmaToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.configurarAlarmaToolStripMenuItem.Text = "Configurar alarma";
             this.configurarAlarmaToolStripMenuItem.Click += new System.EventHandler(this.configurarAlarmaToolStripMenuItem_Click);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.salirToolStripMenuItem.Text = "Salir";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(209, 6);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.salirToolStripMenuItem.Text = "Salir";
+            // 
+            // wmp
+            // 
+            this.wmp.Enabled = true;
+            this.wmp.Location = new System.Drawing.Point(252, 47);
+            this.wmp.Name = "wmp";
+            this.wmp.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp.OcxState")));
+            this.wmp.Size = new System.Drawing.Size(214, 72);
+            this.wmp.TabIndex = 2;
+            this.wmp.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 214);
+            this.Controls.Add(this.wmp);
             this.Controls.Add(this.lblReloj);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -106,6 +120,7 @@
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wmp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,6 +135,7 @@
         private System.Windows.Forms.ToolStripMenuItem configurarAlarmaToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private AxWMPLib.AxWindowsMediaPlayer wmp;
     }
 }
 
