@@ -52,7 +52,7 @@
             this.archivoToolStripMenuItem});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
-            this.mnuPrincipal.Size = new System.Drawing.Size(800, 30);
+            this.mnuPrincipal.Size = new System.Drawing.Size(800, 28);
             this.mnuPrincipal.TabIndex = 0;
             this.mnuPrincipal.Text = "menuStrip1";
             // 
@@ -66,7 +66,7 @@
             this.toolStripSeparator1,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // nuevoToolStripMenuItem
@@ -134,12 +134,12 @@
             // lblAutoguardado
             // 
             this.lblAutoguardado.AutoSize = true;
-            this.lblAutoguardado.Enabled = false;
             this.lblAutoguardado.Location = new System.Drawing.Point(611, 14);
             this.lblAutoguardado.Name = "lblAutoguardado";
             this.lblAutoguardado.Size = new System.Drawing.Size(93, 16);
             this.lblAutoguardado.TabIndex = 2;
             this.lblAutoguardado.Text = "Se guardo cfcf";
+            this.lblAutoguardado.Visible = false;
             // 
             // Form1
             // 

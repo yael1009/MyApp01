@@ -119,11 +119,14 @@ namespace MyApp01
             }
         }*/
 
-        private void tmrAutoguardado_Tick(object sender, EventArgs e)
+        private async void tmrAutoguardado_Tick(object sender, EventArgs e)
         {
             rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
             guardarToolStripMenuItem.Enabled = false;
-            await Task.Delay(2000);
+
+            lblAutoguardado.Visible = true;
+            Task.Delay(2000);
+            lblAutoguardado.Visible=false;
         }
     }
 }
