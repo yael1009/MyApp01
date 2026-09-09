@@ -125,7 +125,7 @@ namespace MyApp01
             guardarToolStripMenuItem.Enabled = false;
 
             lblAutoguardado.Visible = true;
-            Task.Delay(2000);
+            await Task.Delay(2000);
             lblAutoguardado.Visible=false;
         }
     }
