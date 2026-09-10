@@ -36,8 +36,8 @@ namespace MyApp01
             lblReloj.Text = DateTime.Now.ToLongTimeString();
             if (DateTime.Now.ToLongTimeString() == tiempo.ToLongTimeString())
             {
-                wmp.URL = @"C:\Users\rober\Music\4K YouTube to MP3\Soy un cacahuate pero mal hecho.mp3";
-//                wmp.URL = @"C:\Users\rober\Music\4K YouTube to MP3\MÚSICA TUTORIAL YUYA SIN COPYRIGHT(FREE).mp3";
+//                wmp.URL = @"C:\Users\rober\Music\4K YouTube to MP3\Soy un cacahuate pero mal hecho.mp3";
+                wmp.URL = @"C:\Users\rober\Music\4K YouTube to MP3\MÚSICA TUTORIAL YUYA SIN COPYRIGHT(FREE).mp3";
 
                 wmp.Ctlcontrols.play();
             }
