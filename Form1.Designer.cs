@@ -128,7 +128,7 @@
             // 
             // tmrAutoguardado
             // 
-            this.tmrAutoguardado.Interval = 30000;
+            this.tmrAutoguardado.Interval = 10000;
             this.tmrAutoguardado.Tick += new System.EventHandler(this.tmrAutoguardado_Tick);
             // 
             // lblAutoguardado
@@ -151,7 +151,7 @@
             this.Controls.Add(this.mnuPrincipal);
             this.MainMenuStrip = this.mnuPrincipal;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Bloc de notas";
             this.mnuPrincipal.ResumeLayout(false);
             this.mnuPrincipal.PerformLayout();
             this.ResumeLayout(false);
