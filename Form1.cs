@@ -29,11 +29,16 @@ namespace MyApp01
 
         private void dgvInformacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Form  editar = new Form2(
-                dgvRegistros.Rows[e.RowIndex].Cells[1].Value.ToString()
+            Form2  editar = new Form2(
+                dgvRegistros.Rows[e.RowIndex].Cells[1].Value.ToString(),
                 dgvRegistros.Rows[e.RowIndex].Cells[2].Value.ToString()
                 );
-            editar.Show();
+            if (editar.ShowDialog() == DialogResult.OK) {
+                string nombre = editar.ActualizarNombre;
+                string correo = editar.ActualizarCorreo;
+                dgvRegistros.Rows[e.RowIndex].Cells[1].Value=nombre;
+                dgvRegistros.Rows[e.RowIndex].Cells[2].Value= correo;
+            }
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
