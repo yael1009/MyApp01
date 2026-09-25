@@ -25,9 +25,14 @@ namespace MyApp01
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ActualizaNombre = txtNombre.Text;
-            ActualizaCorreo = txtCorreo.Text;
+            ActualizarNombre = txtNombre.Text;
+            ActualizarCorreo = txtCorreo.Text;
             this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

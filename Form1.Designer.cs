@@ -31,18 +31,18 @@
             this.dgvRegistros = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnCargar = new System.Windows.Forms.Button();
-            this.mtbTelefono = new System.Windows.Forms.MaskedTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ofdCSV = new System.Windows.Forms.OpenFileDialog();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -81,11 +81,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnGuardar);
             this.splitContainer1.Panel1.Controls.Add(this.btnCargar);
-            this.splitContainer1.Panel1.Controls.Add(this.mtbTelefono);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.txtNombre);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
@@ -97,50 +94,13 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(528, 28);
+            this.btnCargar.Location = new System.Drawing.Point(12, 31);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(115, 30);
             this.btnCargar.TabIndex = 4;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
-            // 
-            // mtbTelefono
-            // 
-            this.mtbTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbTelefono.Location = new System.Drawing.Point(275, 39);
-            this.mtbTelefono.Mask = "(999)000-0000";
-            this.mtbTelefono.Name = "mtbTelefono";
-            this.mtbTelefono.Size = new System.Drawing.Size(186, 27);
-            this.mtbTelefono.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(271, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "telefono";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(12, 39);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(187, 28);
-            this.txtNombre.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "nombre";
             // 
             // dataGridView1
             // 
@@ -168,21 +128,25 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 50;
             // 
+            // ofdCSV
+            // 
+            this.ofdCSV.FileName = "openFileDialog1";
+            // 
             // Column1
             // 
-            this.Column1.HeaderText = "ID";
+            this.Column1.HeaderText = "Id";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
+            this.Column1.Width = 25;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "nombre";
+            this.Column2.HeaderText = "Nombre";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 250;
+            this.Column2.Width = 150;
             // 
             // Column3
             // 
@@ -190,11 +154,30 @@
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
+            this.Column3.Width = 200;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = global::MyApp01.Properties.Resources.editar;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn3.MinimumWidth = 6;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.Width = 50;
+            // 
+            // dataGridViewImageColumn4
+            // 
+            this.dataGridViewImageColumn4.HeaderText = "";
+            this.dataGridViewImageColumn4.Image = global::MyApp01.Properties.Resources.eliminar;
+            this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn4.MinimumWidth = 6;
+            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            this.dataGridViewImageColumn4.Width = 50;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "";
+            this.Column4.Image = global::MyApp01.Properties.Resources.editar;
             this.Column4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
@@ -204,11 +187,22 @@
             // Column5
             // 
             this.Column5.HeaderText = "";
+            this.Column5.Image = global::MyApp01.Properties.Resources.eliminar;
             this.Column5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             this.Column5.Width = 50;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(166, 31);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(115, 30);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // Form1
             // 
@@ -221,7 +215,6 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -235,18 +228,18 @@
         private System.Windows.Forms.DataGridView dgvRegistros;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnCargar;
-        private System.Windows.Forms.MaskedTextBox mtbTelefono;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.OpenFileDialog ofdCSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewImageColumn Column4;
         private System.Windows.Forms.DataGridViewImageColumn Column5;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
     }
 }
 
