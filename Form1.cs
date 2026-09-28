@@ -67,36 +67,23 @@ namespace MyApp01
         {
             if (open)
             {
-                // Limpiamos la lista global para vaciar los datos viejos
                 registros.Clear();
-
-                // Recorremos fila por fila el DataGridView para actualizar la lista
                 foreach (DataGridViewRow row in dgvRegistros.Rows)
                 {
-                    // Ignoramos la fila vacía del final que usa el DataGridView para crear nuevos registros
+                    // Ignora ultima fila vacia del dgv
                     if (!row.IsNewRow)
                     {
-                        // Creamos un nuevo objeto Persona leyendo el valor de cada celda de la fila
                         Persona p = new Persona();
                         p.id = Convert.ToInt32(row.Cells[0].Value);
                         p.name = row.Cells[1].Value.ToString();
                         p.email = row.Cells[2].Value.ToString();
-
-                        // Agregamos la persona a la lista
                         registros.Add(p);
                     }
                 }
 
-                // Abrimos el archivo en modo escritura usando la ruta guardada en la variable 'path'
-                var writer = new StreamWriter(path);
-
-                // Inicializamos CsvWriter pasándole el stream y la configuración regional
-                var csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
-
-                // Escribimos toda la lista de registros actualizada en el archivo CSV
+                StreamWriter writer = new StreamWriter(path);
+                CsvWriter csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
                 csv.WriteRecords(registros);
-
-                // Cerramos el escritor para guardar los cambios y liberar el archivo
                 writer.Close();
             }
         }
