@@ -19,8 +19,8 @@ namespace MyApp01
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAgregar agregar = new frmAgregar();
-            agregar.Show();
+            frmInformacion informacion = new frmInformacion();
+            informacion.Show();
         }
     }
 }
