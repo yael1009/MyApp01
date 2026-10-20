@@ -81,6 +81,7 @@
             this.dgvInformacion.RowTemplate.Height = 24;
             this.dgvInformacion.Size = new System.Drawing.Size(800, 349);
             this.dgvInformacion.TabIndex = 0;
+            this.dgvInformacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformacion_CellContentClick);
             // 
             // Column1
             // 

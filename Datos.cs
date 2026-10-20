@@ -35,21 +35,34 @@ namespace MyApp01
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
         }
 
-        public bool Insertar(string nombre, string paterno, string materno, string telefono, string correo)
+        public bool ejecutar(string command)
         {
             try
             {
-                //conexion.Open();
                 SqlConnection conectar = conexionOpen();
-                string comando = "Insert Into Datos(nombre,paterno,materno,telefono,correo)Values(" +
-                    "'" + nombre + "','" + paterno + "','" + materno + "','"
-                    + telefono + "','" + correo + "')";
-                SqlCommand sqlCommand = new SqlCommand(comando, conectar);
+                SqlCommand sqlCommand = new SqlCommand(command, conectar);
                 sqlCommand.ExecuteNonQuery();
-                conectar.Close();
+                conexionClose(conectar);
                 return true;
             }
             catch(Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.ToString());
+                return false;
+            }
+        }
+
+        public bool ejecutar(SqlCommand command)
+        {
+            try
+            {
+                SqlConnection conectar = conexionOpen();
+                command.Connection = conectar;
+                command.ExecuteNonQuery();
+                conexionClose(conectar);
+                return true;
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.ToString());
                 return false;
