@@ -66,7 +66,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.button1);
             this.splitContainer1.Panel2.Controls.Add(this.btnSalir);
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 303;
+            this.splitContainer1.SplitterDistance = 345;
             this.splitContainer1.TabIndex = 0;
             // 
             // dgvInformacion
@@ -84,7 +84,7 @@
             this.dgvInformacion.Name = "dgvInformacion";
             this.dgvInformacion.RowHeadersWidth = 51;
             this.dgvInformacion.RowTemplate.Height = 24;
-            this.dgvInformacion.Size = new System.Drawing.Size(800, 303);
+            this.dgvInformacion.Size = new System.Drawing.Size(800, 345);
             this.dgvInformacion.TabIndex = 0;
             this.dgvInformacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformacion_CellContentClick);
             this.dgvInformacion.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvInformacion_CellMouseDown);
