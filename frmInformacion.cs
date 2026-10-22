@@ -13,6 +13,7 @@ namespace MyApp01
     public partial class frmInformacion : Form
     {
         Datos datos;
+        int fila;
         public frmInformacion()
         {
             InitializeComponent();
@@ -72,13 +73,39 @@ namespace MyApp01
 
         private void dgvInformacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmAgregar actualizar = new frmAgregar(dgvInformacion.Rows[e.RowIndex].Cells[1].Value.ToString(),
+            /*frmAgregar actualizar = new frmAgregar(dgvInformacion.Rows[e.RowIndex].Cells[1].Value.ToString(),
                 dgvInformacion.Rows[e.RowIndex].Cells[2].Value.ToString(),
                 dgvInformacion.Rows[e.RowIndex].Cells[3].Value.ToString(),
                 dgvInformacion.Rows[e.RowIndex].Cells[4].Value.ToString(),
                 dgvInformacion.Rows[e.RowIndex].Cells[5].Value.ToString(),
                 Convert.ToInt32(dgvInformacion.Rows[e.RowIndex].Cells[0].Value));
+            actualizar.Show();*/
+        }
+
+        private void dgvInformacion_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right && e.RowIndex >= 0)
+            {
+                fila = e.RowIndex;
+                //fila = Convert.ToInt32(dgvInformacion.Rows[e.RowIndex]);
+                cmsEditar.Show(Cursor.Position);
+            }
+        }
+
+        private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAgregar actualizar = new frmAgregar(dgvInformacion.Rows[fila].Cells[1].Value.ToString(),
+                dgvInformacion.Rows[fila].Cells[2].Value.ToString(),
+                dgvInformacion.Rows[fila].Cells[3].Value.ToString(),
+                dgvInformacion.Rows[fila].Cells[4].Value.ToString(),
+                dgvInformacion.Rows[fila].Cells[5].Value.ToString(),
+                Convert.ToInt32(dgvInformacion.Rows[fila].Cells[0].Value));
             actualizar.Show();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

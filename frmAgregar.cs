@@ -39,7 +39,7 @@ namespace MyApp01
         {
             datos = new Datos();
             if (updateMode == false)
-            {
+            {   
                 bool f = datos.ejecutar("Insert Into Datos(nombre,paterno,materno," +
                 "telefono,correo)Values('"
                 + txtNombre.Text + "','" + txtapPaterno.Text + "','" + txtapMaterno.Text
