@@ -77,5 +77,38 @@ namespace MyApp01
                 }
             }
         }
+
+        private void frmAgregar_Load(object sender, EventArgs e)
+        {
+            datos = new Datos();
+            DataSet dsEstados, dsMunicipios;
+            dsEstados = datos.informacion("Select * From Estados");
+            if (dsEstados != null && dsEstados.Tables.Count > 0)
+            {
+                cbmEstados.DataSource = dsEstados.Tables[0];
+                cbmEstados.DisplayMember = "nombre_estado";
+                cbmEstados.ValueMember = "id_estado";
+
+                cambiosMunicipios(Convert.ToInt32(cbmEstados.SelectedValue));
+            }
+        }
+
+        private void cbmEstados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cambiosMunicipios(Convert.ToInt32(cbmEstados.SelectedIndex + 1));
+        }
+
+        private void cambiosMunicipios(int idEstado)
+        {
+            DataSet dsMunicipios;
+            dsMunicipios = datos.informacion("Select * from Municipios where id_Estado =" + idEstado);
+
+            if (dsMunicipios != null && dsMunicipios.Tables.Count > 0)
+            {
+                cbmMunicipios.DataSource = dsMunicipios.Tables[0];
+                cbmMunicipios.DisplayMember = "nombre_municipio";
+                cbmMunicipios.ValueMember = "id_municipio";
+            }
+        }
     }
 }

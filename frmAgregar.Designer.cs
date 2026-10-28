@@ -40,6 +40,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.cbmEstados = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbmMunicipios = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -136,7 +140,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.btnAgregar.Location = new System.Drawing.Point(40, 488);
+            this.btnAgregar.Location = new System.Drawing.Point(34, 629);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(99, 51);
             this.btnAgregar.TabIndex = 10;
@@ -147,18 +151,59 @@
             // btnCerrar
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.btnCerrar.Location = new System.Drawing.Point(243, 488);
+            this.btnCerrar.Location = new System.Drawing.Point(243, 629);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(99, 51);
             this.btnCerrar.TabIndex = 11;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
+            // cbmEstados
+            // 
+            this.cbmEstados.FormattingEnabled = true;
+            this.cbmEstados.Location = new System.Drawing.Point(40, 523);
+            this.cbmEstados.Name = "cbmEstados";
+            this.cbmEstados.Size = new System.Drawing.Size(302, 24);
+            this.cbmEstados.TabIndex = 12;
+            this.cbmEstados.SelectedIndexChanged += new System.EventHandler(this.cbmEstados_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F);
+            this.label6.Location = new System.Drawing.Point(40, 486);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Estados";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F);
+            this.label7.Location = new System.Drawing.Point(40, 562);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 20);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Municipio";
+            // 
+            // cbmMunicipios
+            // 
+            this.cbmMunicipios.FormattingEnabled = true;
+            this.cbmMunicipios.Location = new System.Drawing.Point(40, 599);
+            this.cbmMunicipios.Name = "cbmMunicipios";
+            this.cbmMunicipios.Size = new System.Drawing.Size(302, 24);
+            this.cbmMunicipios.TabIndex = 14;
+            // 
             // frmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 569);
+            this.ClientSize = new System.Drawing.Size(371, 674);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cbmMunicipios);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cbmEstados);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtCorreo);
@@ -173,6 +218,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmAgregar";
             this.Text = "Agregar";
+            this.Load += new System.EventHandler(this.frmAgregar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +238,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.ComboBox cbmEstados;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbmMunicipios;
     }
 }
